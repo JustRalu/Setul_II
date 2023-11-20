@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
@@ -13,23 +13,23 @@ namespace Setul_2
     {
         static void Main(string[] args)
         {
-             ex_1();
-             ex_2();
-             ex_3();
-             ex_4();
-             ex_5();
-             ex_6();
-             ex_7();
-             ex_8();
-             ex_9();
-             ex_10();
-             ex_11();
-             ex_12();
-             ex_13();
-             ex_14();
-             ex_15();
-             ex_16();
-             ex_17();
+            ex_1();
+            ex_2();
+            ex_3();
+            ex_4();
+            ex_5();
+            ex_6();
+            ex_7();
+            ex_8();
+            ex_9();
+            ex_10();
+            ex_11();
+            ex_12();
+            ex_13();
+            ex_14();
+            ex_15();
+            ex_16();
+            ex_17();
 
 
             Console.ReadKey();
@@ -150,7 +150,7 @@ namespace Setul_2
                     max = x;
                 else
                     if (x < min)
-                        min = x;
+                    min = x;
             }
             Console.WriteLine();
             if (min == max)
@@ -285,7 +285,7 @@ namespace Setul_2
                 }
                 else
                     if (x == 0 && !zero)
-                        zero = true;
+                    zero = true;
 
             }
             Console.WriteLine();
@@ -311,16 +311,16 @@ namespace Setul_2
                     x = y;///y trebuie sa fie cel mai mic element din sir                
                     break;
                 }
-                
-                    x = y;
-                    i++;
-                
+
+                x = y;
+                i++;
+
             }
             if (stg < y)
                 ok = false;
             else
             {
-                
+
                 i++;
                 while (i < n)
                 {
@@ -330,12 +330,12 @@ namespace Setul_2
                         ok = false;
                         break;
                     }
-                   
-                        x = y;
-                        i++;
-                    
+
+                    x = y;
+                    i++;
+
                 }
-                
+
             }
             Console.WriteLine();
             if (!ok)
@@ -348,11 +348,11 @@ namespace Setul_2
         private static bool ex_14_verif_secv_cresc_rotita(int n, int x, int pivot)
         {
             int y = -1, i = 1;
-           
+
             bool caz2 = true;///caz_2 devine false in cazul in care se gasesc mai mult de o pereche de nr crescatoare
             while (i < n - 1)
             {
-               y = int.Parse(Console.ReadLine());
+                y = int.Parse(Console.ReadLine());
                 if (x > y)///y trebuie sa fie cel mai mic element din sir
                     break;
 
@@ -364,15 +364,15 @@ namespace Setul_2
                         caz2 = false;
                         x = y;
                     }
-                
+
                 }
             }
 
 
             if (i == n - 1)/// sir cresc, ce nu i rotit
                 return true;///EX: 1 1 1 2 2 3 4 5 5 8 
-           
-                if (!caz2)
+
+            if (!caz2)
             {
 
                 if (y > pivot)
@@ -388,8 +388,8 @@ namespace Setul_2
 
                         if (x > y || y > pivot)
 
-                            return false; /// 1 2 2 3 4 2 3 3 4
-                        ///sir amestecat
+                            return false; ///EX: caz 1: 2 3 3 4 6 1 0...; caz 2: 2 3 3 4 6 0 0 1 4...
+                                          ///sir amestecat
 
                         i++;
                         x = y;
@@ -409,13 +409,13 @@ namespace Setul_2
 
                     y = int.Parse(Console.ReadLine());
                     if (x < y || y < pivot)
-                        return false;///EX: 2 2 2 2 6 5 4 1 1 0
+                        return false;///EX: caz 1: 2 6 5 4 0 0 1...; caz 2: 2 6 5 4 3 2 1...
 
                     x = y;
                     i++;
 
                 }
-                return true;///EX: 2 2 2 2 6 5 4 4 3
+                return true;///EX: 2 6 5 4 4 3
 
             }
 
@@ -424,7 +424,7 @@ namespace Setul_2
         {
 
             int y = -1, i = 1;
-            
+
             bool caz2 = true;///caz_2 ajunge false in cazul in care se gasesc mai mult de o pereche de nr descrescatoare
             while (i < n - 1)
             {
@@ -440,7 +440,7 @@ namespace Setul_2
                         caz2 = false;
                         x = y;
                     }
-                
+
                 }
             }
 
@@ -452,7 +452,7 @@ namespace Setul_2
             {
 
                 if (y < pivot)
-                    return false; ///EX: 5 4 4 3 2 4 3 2 1 
+                    return false; ///EX: 5 4 4 3 2 4 3 2 1... 
                 else
                 {
                     i++;
@@ -464,7 +464,7 @@ namespace Setul_2
 
                         if (x < y || y < pivot)
 
-                            return false; /// 4 3 2 1 9 9 7 8 SAU 4 3 2 1 9 9 8 5 3
+                            return false; /// caz 1: 4 3 2 1 9 9 7 8...; caz 2: 4 3 2 1 9 9 8 5 3...
                                           ///sir amestecat
 
                         i++;
@@ -485,7 +485,7 @@ namespace Setul_2
 
                     y = int.Parse(Console.ReadLine());
                     if (x > y || y > pivot)
-                        return false;///EX: 6 6 1 2 3 3 2 SAU  6 6 1 2 3 3 4 7
+                        return false;///EX: caz 1: 6 6 1 2 3 3 2...; caz 2: 6 6 1 2 3 3 4 7...
                     x = y;
                     i++;
 
@@ -494,7 +494,7 @@ namespace Setul_2
 
             }
         }
-            private static void ex_14()
+        private static void ex_14()
         {
             Console.WriteLine("Dati un numar natural nenul n de la tastatura, lungimea finita a unui sir,");
             int n = int.Parse(Console.ReadLine());
@@ -530,8 +530,8 @@ namespace Setul_2
                     else
                          if (!ex_14_verif_secv_descresc_rotita(n, y, x))
                             Console.WriteLine("Secventa de nr NU este o <secventa monotona rotita>");
-                         else
-                             Console.WriteLine("Secventa de nr ESTE o <secventa monotona rotita>");
+                        else
+                            Console.WriteLine("Secventa de nr ESTE o <secventa monotona rotita>");
                 }
 
             }
@@ -544,7 +544,7 @@ namespace Setul_2
             int n = int.Parse(Console.ReadLine());
             Console.WriteLine($"cititi {n} nr de la tastatura si aflati daca secventa de nr este bitonica");
             bool ok = true;
-            
+
 
             if (n <= 2)//sirul nu contine destule nr ca sa se verifice
                 ok = false;
@@ -566,8 +566,8 @@ namespace Setul_2
                         if (x > y)///din cresc in descres
                             break;///conditie de stop
 
-                           x = y;
-                            i++;                       
+                        x = y;
+                        i++;
 
                     } while (i < n - 1);
 
@@ -585,10 +585,10 @@ namespace Setul_2
                                 ok = false;
                                 break;
                             }
-                            
-                                x = y;
-                                i++;
-                            
+
+                            x = y;
+                            i++;
+
 
                         } while (i < n - 1);
 
@@ -613,42 +613,42 @@ namespace Setul_2
                 y = int.Parse(Console.ReadLine());
                 if (x > y)///din cresc in descres
                     break;///conditie de stop
-                
-                    x = y;
-                    i++;
-              
+
+                x = y;
+                i++;
+
 
             } while (i < n - 1);
 
             if (i == n - 1)
-                return false;///sir crescator
-           
-                i++;
-                x = y;
-               
-                do
-                {
-                    y = int.Parse(Console.ReadLine());
+                return false;///sir crescator 
+
+            i++;
+            x = y;
+
+            do
+            {
+                y = int.Parse(Console.ReadLine());
                 if (x < y)///sir amestecat
                 {
                     caz_2 = true;
                     break;
                 }
-                
-                    x = y;
-                    i++;
-                
-                } while (i < n - 1);
 
-            
-                if(!caz_2)
-                    return true;
+                x = y;
+                i++;
+
+            } while (i < n - 1);
+
+
+            if (!caz_2)
+                return true;/// EX: 4 5 5 7 6 6 5 4 3
             x = y;
             i++;
             do
             {
                 y = int.Parse(Console.ReadLine());
-                if (x > y || y > pivot)///din cresc in descres
+                if (x > y || y > pivot) ///EX: caz 1:  3 5 8 9 7 6 2 3 6 2...; caz 2 : 3 5 8 9 7 6 2 3 6...
                     return false;
 
                 x = y;
@@ -656,8 +656,8 @@ namespace Setul_2
 
 
             } while (i < n - 1);
-          
-            return true;
+
+            return true;///EX: 3 5 8 9 7 6 0 1 1 2
 
         }
         private static bool ex_16_secv_bitonica_rotita_descresc_cresc_sau_descresc_cresc_descresc(int pivot, int x, int n)
@@ -688,7 +688,7 @@ namespace Setul_2
                 y = int.Parse(Console.ReadLine());
                 if (x > y)///sir amestecat
                 {
-                    
+
                     caz_2 = true;
                     break;
                 }
@@ -706,7 +706,7 @@ namespace Setul_2
             do
             {
                 y = int.Parse(Console.ReadLine());
-                if (x < y || y < pivot)///din descresc in cres
+                if (x < y || y < pivot)
                     return false;
 
                 x = y;
@@ -714,7 +714,7 @@ namespace Setul_2
 
 
             } while (i < n - 1);
- 
+
             return true;
         }
         private static void ex_16()
@@ -739,8 +739,8 @@ namespace Setul_2
                     y = int.Parse(Console.ReadLine());
                     i++;
                 }
-                if (i == n - 1)               
-                        Console.WriteLine("Secventa de nr NU este rotita bitonic");              
+                if (i == n - 1)///sir constant
+                    Console.WriteLine("Secventa de nr NU este rotita bitonic");
                 else
                 {
                     n = n - i + 1;/// in caz ca sirul incepe cu termeni identici, ignoram primii i - 1 termeni
@@ -759,21 +759,21 @@ namespace Setul_2
                             Console.WriteLine("Secventa de nr ESTE rotita bitonic");
                 }
             }
-            
-                
+
+
             Console.WriteLine();
         }
         private static void ex_17()
         {
             Console.WriteLine("Aflati daca secv urmatoare compusa din paranteze deschise si inchise este corecta, cat si numarul de incuibare al acestora");
-            bool stop = false, ok = true; 
+            bool stop = false, ok = true;
             int inchis = 0, deschis = 1, x;
             x = int.Parse(Console.ReadLine());
 
 
             if (x == 1 || x == -1)
                 ok = false;
-           
+
             else
             {
                 deschis = 1;
@@ -784,23 +784,23 @@ namespace Setul_2
                         stop = true;
                     else
                         if (x == 1)
+                    {
+                        if (deschis == inchis)///nu mai sunt paranteze de inchis
                         {
-                            if (deschis == inchis)///nu mai sunt paranteze de inchis
-                            {
-                                ok = false;
-                                stop = true;
-                            }
-                            else
-                              inchis++;
+                            ok = false;
+                            stop = true;
                         }
-
                         else
-                            deschis++;
+                            inchis++;
+                    }
 
-                }while (!stop);
+                    else
+                        deschis++;
+
+                } while (!stop);
             }
 
-            
+
 
             if (!ok || deschis > inchis)
                 Console.WriteLine("Secventa gresita");
@@ -813,7 +813,6 @@ namespace Setul_2
 
             Console.WriteLine();
 
-                }
-           }
         }
-    
+    }
+}
