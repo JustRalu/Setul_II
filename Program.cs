@@ -648,7 +648,7 @@ namespace Setul_2
             do
             {
                 y = int.Parse(Console.ReadLine());
-                if (x > y || y > pivot) ///EX: caz 1:  3 5 8 9 7 6 2 3 6 2...; caz 2 : 3 5 8 9 7 6 2 3 6...
+                if (x > y || y > pivot) ///EX: caz 1:  3 5 8 9 7 6 2 3 6...; caz 2 : 3 5 8 9 7 6 2 3 6...
                     return false;
 
                 x = y;
@@ -657,7 +657,7 @@ namespace Setul_2
 
             } while (i < n - 1);
 
-            return true;///EX: 3 5 8 9 7 6 0 1 1 2
+            return true;///EX: 4 5 8 9 7 6 0 1 2 3
 
         }
         private static bool ex_16_secv_bitonica_rotita_descresc_cresc_sau_descresc_cresc_descresc(int pivot, int x, int n)
@@ -700,13 +700,13 @@ namespace Setul_2
 
 
             if (!caz_2)
-                return true;
+                return true;///EX: 9 8 8 7 4 4 5 6
             x = y;
             i++;
             do
             {
                 y = int.Parse(Console.ReadLine());
-                if (x < y || y < pivot)
+                if (x < y || y < pivot)///EX: caz 1: 9 8 3 5 6 4 3 5...; caz 2: 4 3 3 1 2 5 4 2...
                     return false;
 
                 x = y;
@@ -715,7 +715,7 @@ namespace Setul_2
 
             } while (i < n - 1);
 
-            return true;
+            return true;///EX: 4 3 3 1 2 3 5 9 8 8 7
         }
         private static void ex_16()
         {
