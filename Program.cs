@@ -220,7 +220,7 @@ namespace Setul_2
         private static void ex_10()
         {
             Console.WriteLine("Dati un numar natural nenul n de la tastatura, lungimea finita a unui sir,");
-            int n = int.Parse(Console.ReadLine()), x, y, nr = 1, max = -1;
+            int n = int.Parse(Console.ReadLine()), x, y, nr = 1, max = 1;
             Console.WriteLine($"cititi {n} termeni de la tastatura si aflati lungimea maxima formata din termeni identici");
             x = int.Parse(Console.ReadLine());
             for (int i = 0; i < n - 1; i++)
@@ -498,12 +498,13 @@ namespace Setul_2
         {
             Console.WriteLine("Dati un numar natural nenul n de la tastatura, lungimea finita a unui sir,");
             int n = int.Parse(Console.ReadLine());
-            Console.WriteLine($"cititi {n} nr de la tastatura si aflati daca secventa data este o <secventa monotona rotita>");
+           
 
             if (n >= 1 && n <= 2)
                 Console.WriteLine("Secventa de nr ESTE o <secventa monotona rotita>");
             else
             {
+                Console.WriteLine($"cititi {n} nr de la tastatura si aflati daca secventa data este o <secventa monotona rotita>");
                 int x, y, i = 1;
 
                 x = int.Parse(Console.ReadLine());
