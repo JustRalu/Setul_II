@@ -369,8 +369,8 @@ namespace Setul_2
             }
 
 
-            if (i == n - 1)/// sir cresc, ce nu i rotit
-                return true;///EX: 1 1 1 2 2 3 4 5 5 8 
+            if (i == n - 1)/// sir cresc sau sir constant
+                return true;///EX: 1 2 2 3 4 5 5 8 
 
             if (!caz2)
             {
@@ -389,7 +389,7 @@ namespace Setul_2
                         if (x > y || y > pivot)
 
                             return false; ///EX: caz 1: 2 3 3 4 6 1 0...; caz 2: 2 3 3 4 6 0 0 1 4...
-                                          ///sir amestecat
+                                          
 
                         i++;
                         x = y;
@@ -399,8 +399,7 @@ namespace Setul_2
 
                 }
             }
-            else
-            {
+            
                 i++;
                 x = y;
 
@@ -409,15 +408,13 @@ namespace Setul_2
 
                     y = int.Parse(Console.ReadLine());
                     if (x < y || y < pivot)
-                        return false;///EX: caz 1: 2 6 5 4 0 0 1...; caz 2: 2 6 5 4 3 2 1...
+                        return false;///EX: caz 1: 1 6 5 4 4 2 3...; caz 2: 2 6 5 4 3 2 1...
 
                     x = y;
                     i++;
 
                 }
                 return true;///EX: 2 6 5 4 4 3
-
-            }
 
         }
         private static bool ex_14_verif_secv_descresc_rotita(int n, int x, int pivot)
@@ -475,8 +472,7 @@ namespace Setul_2
 
                 }
             }
-            else
-            {
+            
                 i++;
                 x = y;
 
@@ -492,7 +488,6 @@ namespace Setul_2
                 }
                 return true;///EX: 6 6 1 2 3 3 4 5 5
 
-            }
         }
         private static void ex_14()
         {
@@ -622,7 +617,7 @@ namespace Setul_2
             } while (i < n - 1);
 
             if (i == n - 1)
-                return false;///sir crescator 
+                return false;///sir crescator sau sir constant
 
             i++;
             x = y;
@@ -649,7 +644,7 @@ namespace Setul_2
             do
             {
                 y = int.Parse(Console.ReadLine());
-                if (x > y || y > pivot) ///EX: caz 1:  3 5 8 9 7 6 2 3 6...; caz 2 : 3 5 8 9 7 6 2 3 6...
+                if (x > y || y > pivot) ///EX: caz 1:  3 5 8 9 7 6 2 3 1...; caz 2 : 3 5 8 9 7 6 2 3 3 4...
                     return false;
 
                 x = y;
@@ -679,7 +674,7 @@ namespace Setul_2
             } while (i < n - 1);
 
             if (i == n - 1)
-                return false;///sir descrescator 
+                return false;///sir descrescator sau sir constant
 
             i++;
             x = y;
@@ -707,7 +702,7 @@ namespace Setul_2
             do
             {
                 y = int.Parse(Console.ReadLine());
-                if (x < y || y < pivot)///EX: caz 1: 9 8 3 5 6 4 3 5...; caz 2: 4 3 3 1 2 5 4 2...
+                if (x < y || y < pivot)///EX: caz 1: 9 8 3 5 6 4 3 10...; caz 2: 4 3 3 1 2 5 4 2...
                     return false;
 
                 x = y;
