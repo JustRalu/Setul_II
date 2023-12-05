@@ -551,7 +551,7 @@ namespace Setul_2
                 x = int.Parse(Console.ReadLine());///primul termen din sir
                 y = int.Parse(Console.ReadLine());///al doilea termen din sir
                 if (x < y)//sir ce incepe descrescator
-                    ok = false;
+                {}
                 else
                 {
                     x = y;
@@ -567,9 +567,8 @@ namespace Setul_2
 
                     } while (i < n - 1);
 
-                    if (i == n - 1)
-                        ok = false;///sau sir crescator sau sir ce consista din elemente identice
-                    else
+                    if (i != n - 1)
+                    
                     {
                         i++;
                         x = y;
