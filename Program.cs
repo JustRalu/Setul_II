@@ -542,7 +542,7 @@ namespace Setul_2
             bool ok = true;
 
 
-            if (n <= 2)//sirul nu contine destule nr ca sa se verifice
+            if (n < 1)//sirul nu contine destule nr ca sa se verifice
                 ok = false;
 
             else
@@ -550,8 +550,25 @@ namespace Setul_2
                 int x, y;
                 x = int.Parse(Console.ReadLine());///primul termen din sir
                 y = int.Parse(Console.ReadLine());///al doilea termen din sir
-                if (x < y)//sir ce incepe descrescator
-                {}
+                if (x > y)//sir ce incepe descrescator
+                { 
+                    x = y;
+                    int i = 1;
+                    do
+                    {
+                        y = int.Parse(Console.ReadLine());
+                        if (x < y)///din cresc in descres
+                            break;///conditie de stop
+
+                        x = y;
+                        i++;
+
+                    } while (i < n - 1);
+
+                    if (i != n - 1)
+                        ok = false;
+                
+                 }
                 else
                 {
                     x = y;
@@ -616,7 +633,7 @@ namespace Setul_2
             } while (i < n - 1);
 
             if (i == n - 1)
-                return false;///sir crescator sau sir constant
+                return true;///sir crescator 
 
             i++;
             x = y;
@@ -673,7 +690,7 @@ namespace Setul_2
             } while (i < n - 1);
 
             if (i == n - 1)
-                return false;///sir descrescator sau sir constant
+                return true;///sir descrescator
 
             i++;
             x = y;
@@ -721,9 +738,8 @@ namespace Setul_2
             Console.WriteLine();
             Console.WriteLine();
 
-            ///daca vectorul contine doar elemente identice, sau este monoton, acesta nu este nici bitonic, nici rotit bitonic
-            if (n <= 2)// nu contine destule nr ca sirul sa se verifice
-                Console.WriteLine("Date gresite date de la tastatura");
+            if (n <= 2 && n >= 1 )// nu contine destule nr ca sirul sa se verifice
+                Console.WriteLine("Secventa de nr ESTE rotita bitonic");
             else
             {
                 int x = int.Parse(Console.ReadLine());
@@ -735,7 +751,7 @@ namespace Setul_2
                     i++;
                 }
                 if (i == n - 1)///sir constant
-                    Console.WriteLine("Secventa de nr NU este rotita bitonic");
+                   Console.WriteLine("Secventa de nr ESTE rotita bitonic");
                 else
                 {
                     n = n - i + 1;/// in caz ca sirul incepe cu termeni identici, ignoram primii i - 1 termeni
