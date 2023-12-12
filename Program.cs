@@ -493,7 +493,9 @@ namespace Setul_2
         {
             Console.WriteLine("Dati un numar natural nenul n de la tastatura, lungimea finita a unui sir,");
             int n = int.Parse(Console.ReadLine());
-           
+           if(n < 1)
+                Console.WriteLine("Date gresite date de la tastatura");
+            else
 
             if (n >= 1 && n <= 2)
                 Console.WriteLine("Secventa de nr ESTE o <secventa monotona rotita>");
@@ -546,6 +548,7 @@ namespace Setul_2
                 ok = false;
 
             else
+            if(n >= 2)
             {
                 int x, y;
                 x = int.Parse(Console.ReadLine());///primul termen din sir
@@ -609,7 +612,7 @@ namespace Setul_2
             }
             Console.WriteLine();
             if (!ok)
-                Console.WriteLine("Secventa de nr NU este bitonica");
+                Console.WriteLine("Secventa de nr NU este bitonica sau date gresite date de la tastatura");
             else
                 Console.WriteLine("Secventa de nr ESTE bitonica");
             Console.WriteLine();
@@ -737,8 +740,11 @@ namespace Setul_2
 
             Console.WriteLine();
             Console.WriteLine();
+            if(n < 1)
+                Console.WriteLine("Date gresite date de la tastatura");
+            else
 
-            if (n <= 2 && n >= 1 )// nu contine destule nr ca sirul sa se verifice
+            if (n <= 2 && n >= 1 )
                 Console.WriteLine("Secventa de nr ESTE rotita bitonic");
             else
             {
